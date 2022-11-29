@@ -1,20 +1,24 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.7.21"
+  kotlin("jvm") version "1.7.21"
+  application
 }
 
 group = "io.github.aaronchenwei.learning.jgrapht"
 version = "0.0.1-SNAPSHOT"
+
 java.sourceCompatibility = JavaVersion.VERSION_17
 
 repositories {
-    mavenCentral()
+  mavenCentral()
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+  implementation("org.jgrapht:jgrapht-core:1.5.1")
+  implementation("org.jgrapht:jgrapht-io:1.5.1")
+  implementation(kotlin("stdlib"))
+  testImplementation(kotlin("test"))
 }
 
 tasks.withType<KotlinCompile> {
@@ -26,4 +30,8 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
   useJUnitPlatform()
+}
+
+application {
+  mainClass.set("io.github.aaronchenwei.learning.jgrapht.HelloJGraphTKt") // The main class of the application
 }
