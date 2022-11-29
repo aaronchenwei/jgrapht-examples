@@ -17,8 +17,6 @@ import java.rmi.server.ExportException
 /**
  * The starting point for the demo.
  *
- * @param args ignored.
- *
  * @throws URISyntaxException if invalid URI is constructed.
  * @throws ExportException if graph cannot be exported.
  */
@@ -104,8 +102,7 @@ private fun renderHrefGraph(hrefGraph: Graph<URI, DefaultEdge>) {
     v.host.replace('.', '_')
   }
   exporter.setVertexAttributeProvider { v ->
-    val map: MutableMap<String, Attribute> =
-      LinkedHashMap<String, Attribute>()
+    val map: MutableMap<String, Attribute> = LinkedHashMap()
     map["label"] = DefaultAttribute.createAttribute(v.toString())
     map
   }
