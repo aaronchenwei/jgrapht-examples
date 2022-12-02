@@ -32,9 +32,13 @@ import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @TestMethodOrder(OrderAnnotation.class)
 public class GraphStructuresTests {
+
+  private static final Logger LOGGER = LoggerFactory.getLogger(GraphStructuresTests.class);
 
   private static final List<String> VERTEX_LIST = Arrays.asList("a", "b", "c", "d", "e", "f", "g", "h");
 
@@ -68,7 +72,7 @@ public class GraphStructuresTests {
     assertEquals(8, graph.vertexSet().size());
     assertEquals(9, graph.edgeSet().size());
 
-    System.out.println(graph);
+    LOGGER.atInfo().setMessage("{}").addArgument(graph).log();
   }
 
   @Test
@@ -86,7 +90,7 @@ public class GraphStructuresTests {
     assertEquals(8, graph.vertexSet().size());
     assertEquals(3, graph.edgeSet().size());
 
-    System.out.println(graph);
+    LOGGER.atInfo().setMessage("{}").addArgument(graph).log();
   }
 
   @Test
@@ -106,7 +110,7 @@ public class GraphStructuresTests {
     assertEquals(8, graph.vertexSet().size());
     assertEquals(4, graph.edgeSet().size());
 
-    System.out.println(graph);
+    LOGGER.atInfo().setMessage("{}").addArgument(graph).log();
   }
 
   @Test
@@ -127,7 +131,7 @@ public class GraphStructuresTests {
     assertEquals(8, graph.vertexSet().size());
     assertEquals(2, graph.edgeSet().size());
 
-    System.out.println(graph);
+    LOGGER.atInfo().setMessage("{}").addArgument(graph).log();
   }
 
   @Test
@@ -147,7 +151,7 @@ public class GraphStructuresTests {
     assertNull(edge2);
     assertNull(edge3);
 
-    System.out.println(graph);
+    LOGGER.atInfo().setMessage("{}").addArgument(graph).log();
   }
 
   @Test
@@ -168,7 +172,7 @@ public class GraphStructuresTests {
     assertEquals(2, graph.getAllEdges("a", "b").size());
     assertEquals(2, graph.getAllEdges("b", "c").size());
 
-    System.out.println(graph);
+    LOGGER.atInfo().setMessage("{}").addArgument(graph).log();
   }
 
   @Test
@@ -178,7 +182,7 @@ public class GraphStructuresTests {
     var graph = new WeightedPseudograph<String, DefaultWeightedEdge>(DefaultWeightedEdge.class);
     Graphs.addAllVertices(graph, VERTEX_LIST);
 
-    System.out.println(graph);
+    LOGGER.atInfo().setMessage("{}").addArgument(graph).log();
   }
 
   @Test
@@ -188,7 +192,7 @@ public class GraphStructuresTests {
     var graph = new DefaultUndirectedWeightedGraph<String, DefaultWeightedEdge>(DefaultWeightedEdge.class);
     Graphs.addAllVertices(graph, VERTEX_LIST);
 
-    System.out.println(graph);
+    LOGGER.atInfo().setMessage("{}").addArgument(graph).log();
   }
 
   @Test
@@ -198,7 +202,7 @@ public class GraphStructuresTests {
     var graph = new SimpleDirectedGraph<String, DefaultEdge>(DefaultEdge.class);
     Graphs.addAllVertices(graph, VERTEX_LIST);
 
-    System.out.println(graph);
+    LOGGER.atInfo().setMessage("{}").addArgument(graph).log();
   }
 
   @Test
@@ -208,7 +212,7 @@ public class GraphStructuresTests {
     var graph = new DirectedMultigraph<String, DefaultEdge>(DefaultEdge.class);
     Graphs.addAllVertices(graph, VERTEX_LIST);
 
-    System.out.println(graph);
+    LOGGER.atInfo().setMessage("{}").addArgument(graph).log();
   }
 
   @Test
@@ -218,7 +222,7 @@ public class GraphStructuresTests {
     var graph = new DirectedPseudograph<String, DefaultEdge>(DefaultEdge.class);
     Graphs.addAllVertices(graph, VERTEX_LIST);
 
-    System.out.println(graph);
+    LOGGER.atInfo().setMessage("{}").addArgument(graph).log();
   }
 
   @Test
@@ -228,7 +232,7 @@ public class GraphStructuresTests {
     var graph = new DefaultDirectedGraph<String, DefaultEdge>(DefaultEdge.class);
     Graphs.addAllVertices(graph, VERTEX_LIST);
 
-    System.out.println(graph);
+    LOGGER.atInfo().setMessage("{}").addArgument(graph).log();
   }
 
   @Test
@@ -238,7 +242,7 @@ public class GraphStructuresTests {
     var graph = new SimpleDirectedWeightedGraph<String, DefaultWeightedEdge>(DefaultWeightedEdge.class);
     Graphs.addAllVertices(graph, VERTEX_LIST);
 
-    System.out.println(graph);
+    LOGGER.atInfo().setMessage("{}").addArgument(graph).log();
   }
 
   @Test
@@ -248,7 +252,7 @@ public class GraphStructuresTests {
     var graph = new DirectedWeightedMultigraph<String, DefaultWeightedEdge>(DefaultWeightedEdge.class);
     Graphs.addAllVertices(graph, VERTEX_LIST);
 
-    System.out.println(graph);
+    LOGGER.atInfo().setMessage("{}").addArgument(graph).log();
   }
 
   @Test
@@ -258,7 +262,7 @@ public class GraphStructuresTests {
     var graph = new DirectedWeightedPseudograph<String, DefaultWeightedEdge>(DefaultWeightedEdge.class);
     Graphs.addAllVertices(graph, VERTEX_LIST);
 
-    System.out.println(graph);
+    LOGGER.atInfo().setMessage("{}").addArgument(graph).log();
   }
 
   @Test
@@ -268,6 +272,6 @@ public class GraphStructuresTests {
     var graph = new DefaultDirectedWeightedGraph<String, DefaultWeightedEdge>(DefaultWeightedEdge.class);
     Graphs.addAllVertices(graph, VERTEX_LIST);
 
-    System.out.println(graph);
+    LOGGER.atInfo().setMessage("{}").addArgument(graph).log();
   }
 }
