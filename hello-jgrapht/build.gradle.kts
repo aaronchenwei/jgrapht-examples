@@ -20,6 +20,8 @@ dependencies {
 
   implementation(kotlin("stdlib"))
   testImplementation(kotlin("test"))
+  
+  testImplementation(platform("org.junit:junit-bom:5.9.1"))
 }
 
 tasks.withType<KotlinCompile> {
