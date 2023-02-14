@@ -13,7 +13,7 @@ dependencies {
   implementation("org.jgrapht:jgrapht-core:1.5.1")
   implementation("org.jgrapht:jgrapht-opt:1.5.1")
 
-  testImplementation(platform("org.junit:junit-bom:5.9.1"))
+  testImplementation(platform("org.junit:junit-bom:5.9.2"))
   testImplementation("org.junit.jupiter:junit-jupiter")
 
   implementation("org.slf4j:slf4j-api:2.0.6")
