@@ -25,7 +25,7 @@ dependencies {
   testImplementation("org.junit.jupiter:junit-jupiter")
 
   implementation("org.slf4j:slf4j-api:2.0.6")
-  runtimeOnly("ch.qos.logback:logback-classic:1.4.5")
+  runtimeOnly("ch.qos.logback:logback-classic:1.4.6")
 }
 
 tasks.withType<KotlinCompile> {
